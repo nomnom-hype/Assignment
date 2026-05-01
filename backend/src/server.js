@@ -12,6 +12,7 @@ app.use(cors());
 app.use(express.json());
 app.use(morgan('dev'));
 
+app.get('/', (_req, res) => res.json({ message: 'Team Task Manager API is running' }));
 app.get('/api/health', (_req, res) => res.json({ ok: true }));
 app.use('/api/auth', authRoutes);
 app.use('/api/projects', projectRoutes);
